@@ -123,7 +123,8 @@ export interface OpenDialogActionReturn {
     | 'privacy'
     | 'settings'
     | 'model'
-    | 'permissions';
+    | 'permissions'
+    | 'product-settings';
 }
 
 /**

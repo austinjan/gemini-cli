@@ -263,6 +263,12 @@ My setup is complete. I will provide my first command in the next turn.
       const systemInstruction = getCoreSystemPrompt(this.config, userMemory);
       const model = this.config.getModel();
 
+      console.log(
+        '[austin] Client.startChat: systemInstruction=',
+        systemInstruction,
+        ' history',
+        history,
+      );
       const config: GenerateContentConfig = { ...this.generateContentConfig };
 
       if (isThinkingSupported(model)) {
@@ -485,6 +491,7 @@ My setup is complete. I will provide my first command in the next turn.
       this.lastPromptId = prompt_id;
       this.currentSequenceModel = null;
     }
+
     this.sessionTurnCount++;
     if (
       this.config.getMaxSessionTurns() > 0 &&

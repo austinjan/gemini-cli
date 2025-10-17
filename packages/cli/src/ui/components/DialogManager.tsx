@@ -12,6 +12,7 @@ import { ShellConfirmationDialog } from './ShellConfirmationDialog.js';
 import { ConsentPrompt } from './ConsentPrompt.js';
 import { ThemeDialog } from './ThemeDialog.js';
 import { SettingsDialog } from './SettingsDialog.js';
+import { ProductSettingsDialog } from './ProductSettingsDialog.js';
 import { AuthInProgress } from '../auth/AuthInProgress.js';
 import { AuthDialog } from '../auth/AuthDialog.js';
 import { EditorSettingsDialog } from './EditorSettingsDialog.js';
@@ -143,6 +144,29 @@ export const DialogManager = ({
           onSelect={() => uiActions.closeSettingsDialog()}
           onRestartRequest={() => process.exit(0)}
           availableTerminalHeight={terminalHeight - staticExtraHeight}
+        />
+      </Box>
+    );
+  }
+  if (uiState.isProductSettingsDialogOpen) {
+    return (
+      <Box flexDirection="column">
+        <ProductSettingsDialog
+          onSelect={(settings) => {
+            if (settings) {
+              // Settings saved successfully
+              addItem(
+                {
+                  type: 'info',
+                  text: `Product settings saved to .aaagent/product-settings.json`,
+                },
+                Date.now(),
+              );
+            }
+            uiActions.closeProductSettingsDialog();
+          }}
+          availableTerminalHeight={terminalHeight - staticExtraHeight}
+          workingDirectory={config?.getWorkingDir() || process.cwd()}
         />
       </Box>
     );
