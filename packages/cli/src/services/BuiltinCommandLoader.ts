@@ -22,6 +22,7 @@ import { extensionsCommand } from '../ui/commands/extensionsCommand.js';
 import { helpCommand } from '../ui/commands/helpCommand.js';
 import { ideCommand } from '../ui/commands/ideCommand.js';
 import { initCommand } from '../ui/commands/initCommand.js';
+import { initProductCommand } from '../ui/commands/initProductCommand.js';
 import { mcpCommand } from '../ui/commands/mcpCommand.js';
 import { memoryCommand } from '../ui/commands/memoryCommand.js';
 import { modelCommand } from '../ui/commands/modelCommand.js';
@@ -33,6 +34,7 @@ import { statsCommand } from '../ui/commands/statsCommand.js';
 import { themeCommand } from '../ui/commands/themeCommand.js';
 import { toolsCommand } from '../ui/commands/toolsCommand.js';
 import { settingsCommand } from '../ui/commands/settingsCommand.js';
+import { productSettingsCommand } from '../ui/commands/productSettingsCommand.js';
 import { vimCommand } from '../ui/commands/vimCommand.js';
 import { setupGithubCommand } from '../ui/commands/setupGithubCommand.js';
 import { terminalSetupCommand } from '../ui/commands/terminalSetupCommand.js';
@@ -68,11 +70,13 @@ export class BuiltinCommandLoader implements ICommandLoader {
       helpCommand,
       await ideCommand(),
       initCommand,
+      initProductCommand,
       mcpCommand,
       memoryCommand,
       ...(this.config?.getUseModelRouter() ? [modelCommand] : []),
       ...(this.config?.getFolderTrust() ? [permissionsCommand] : []),
       privacyCommand,
+      productSettingsCommand,
       quitCommand,
       restoreCommand(this.config),
       statsCommand,

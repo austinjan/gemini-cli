@@ -4,7 +4,8 @@
       "Bash(git restore:*)",
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

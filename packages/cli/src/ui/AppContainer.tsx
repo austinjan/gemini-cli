@@ -53,6 +53,7 @@ import { useAuthCommand } from './auth/useAuth.js';
 import { useQuotaAndFallback } from './hooks/useQuotaAndFallback.js';
 import { useEditorSettings } from './hooks/useEditorSettings.js';
 import { useSettingsCommand } from './hooks/useSettingsCommand.js';
+import { useProductSettingsCommand } from './hooks/useProductSettingsCommand.js';
 import { useModelCommand } from './hooks/useModelCommand.js';
 import { useSlashCommandProcessor } from './hooks/slashCommandProcessor.js';
 import { useVimMode } from './contexts/VimModeContext.js';
@@ -430,6 +431,12 @@ Logging in with Google... Please restart Gemini CLI to continue.
   const { isSettingsDialogOpen, openSettingsDialog, closeSettingsDialog } =
     useSettingsCommand();
 
+  const {
+    isProductSettingsDialogOpen,
+    openProductSettingsDialog,
+    closeProductSettingsDialog,
+  } = useProductSettingsCommand();
+
   const { isModelDialogOpen, openModelDialog, closeModelDialog } =
     useModelCommand();
 
@@ -449,6 +456,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       openEditorDialog,
       openPrivacyNotice: () => setShowPrivacyNotice(true),
       openSettingsDialog,
+      openProductSettingsDialog,
       openModelDialog,
       openPermissionsDialog,
       quit: (messages: HistoryItem[]) => {
@@ -468,6 +476,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       openThemeDialog,
       openEditorDialog,
       openSettingsDialog,
+      openProductSettingsDialog,
       openModelDialog,
       setQuittingMessages,
       setDebugMessage,
@@ -1051,6 +1060,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
     !!loopDetectionConfirmationRequest ||
     isThemeDialogOpen ||
     isSettingsDialogOpen ||
+    isProductSettingsDialogOpen ||
     isModelDialogOpen ||
     isPermissionsDialogOpen ||
     isAuthenticating ||
@@ -1082,6 +1092,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       debugMessage,
       quittingMessages,
       isSettingsDialogOpen,
+      isProductSettingsDialogOpen,
       isModelDialogOpen,
       isPermissionsDialogOpen,
       slashCommands,
@@ -1161,6 +1172,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       debugMessage,
       quittingMessages,
       isSettingsDialogOpen,
+      isProductSettingsDialogOpen,
       isModelDialogOpen,
       isPermissionsDialogOpen,
       slashCommands,
@@ -1240,6 +1252,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       exitEditorDialog,
       exitPrivacyNotice: () => setShowPrivacyNotice(false),
       closeSettingsDialog,
+      closeProductSettingsDialog,
       closeModelDialog,
       closePermissionsDialog,
       setShellModeActive,
@@ -1264,6 +1277,7 @@ Logging in with Google... Please restart Gemini CLI to continue.
       handleEditorSelect,
       exitEditorDialog,
       closeSettingsDialog,
+      closeProductSettingsDialog,
       closeModelDialog,
       closePermissionsDialog,
       setShellModeActive,
