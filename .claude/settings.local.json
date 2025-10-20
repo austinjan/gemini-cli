@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git restore:*)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(find:*)",
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(git checkout:*)",
+      "Bash(npm ci:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

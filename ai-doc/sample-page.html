@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <style>
+        :root {
+            --primary-color: #005f9e;
+            --secondary-color: #6c757d;
+            --accent-color: #f37021;
+            --background-color: #FFFFFF;
+            --surface-color: #F8F9FA;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --border-color: #DEE2E6;
+
+            --heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --font-size-base: 16px;
+            --heading-scale: 1.25;
+            --font-weight-headings: 700;
+            --font-weight-body: 400;
+
+            --container-width: 1200px;
+            --border-radius: 0.25rem;
+            --spacing-unit: 8px;
+            --shadow-level: 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--body-font);
+            font-weight: var(--font-weight-body);
+            font-size: var(--font-size-base);
+            color: var(--text-primary);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: calc(var(--spacing-unit) * 3);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+            font-weight: var(--font-weight-headings);
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: calc(var(--font-size-base) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+        }
+
+        h2 {
+            font-size: calc(var(--font-size-base) * var(--heading-scale) * var(--heading-scale));
+        }
+
+        p {
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-headings);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        header, footer {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: calc(var(--spacing-unit) * 2) 0;
+        }
+        
+        footer {
+            border-bottom: none;
+            border-top: 1px solid var(--border-color);
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        .hero {
+            background-color: var(--surface-color);
+            padding: calc(var(--spacing-unit) * 6) 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 3);
+            box-shadow: var(--shadow-level);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <strong>MyCorp</strong>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Our Sample Page</h1>
+                <p>This page demonstrates the generated style guide in action.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-accent" style="margin-left: 16px;">Learn More</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="card">
+                <h2>About Us</h2>
+                <p>This is a sample card component using the surface color, border, and shadow from the style guide. Text is rendered in the secondary text color for contrast and readability.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Our Services</h2>
+                <p>Leveraging the defined styles provides a consistent and professional look and feel throughout the application. The primary and accent colors are used for interactive elements like buttons to draw user attention.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MyCorp. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
